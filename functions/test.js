@@ -1,6 +1,14 @@
+import Purgecss from 'purgecss'
+
 exports.handler = (event, context, callback) => {
+  const purgeCss = new Purgecss({
+    content: ['**/*.html'],
+    css: ['**/*.css']
+  })
+  const result = purgeCss.purge()
+
   callback(null, {
     statusCode: 200,
-    body: 'No worries, all is working fine!'
+    body: result
   })
 }
