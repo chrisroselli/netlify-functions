@@ -6,6 +6,7 @@ exports.handler = function(event, context, callback) {
     css: ['**/*.css']
   })
   const result = purgeCss.purge()
+  console.log(result);
 
   callback(null, {
     statusCode: 200,
