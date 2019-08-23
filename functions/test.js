@@ -1,6 +1,6 @@
-import Purgecss from 'purgecss'
+const Purgecss = require('purgecss')
 
-exports.handler = (event, context, callback) => {
+exports.handler = function(event, context, callback) {
   const purgeCss = new Purgecss({
     content: ['**/*.html'],
     css: ['**/*.css']
@@ -10,5 +10,5 @@ exports.handler = (event, context, callback) => {
   callback(null, {
     statusCode: 200,
     body: result
-  })
+  });
 }
